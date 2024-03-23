@@ -247,6 +247,8 @@ const RegisterUserForm = ({ isCreating, setIsCreating, getAllUsers }) => {
             </div>
             <div className="grid grid-flow-col gap-2">
               <div className="grid-cols-6">
+
+                
                 <Label htmlFor="avatar" className="font-bold" value="Avatar" />
                 <FileInput
                   id="avatar"
