@@ -7,7 +7,7 @@ import { confirmAlert, customAlert } from "../../../../config/alerts/alert";
 
 
 const UpdateUserForm = ({ isUpdate, setIsUpdate, getAllUsers, selectedUser }) => {
-    
+
     const closeModal = () => {
         formik.resetForm();
         setIsUpdate(false);
@@ -37,7 +37,7 @@ const UpdateUserForm = ({ isUpdate, setIsUpdate, getAllUsers, selectedUser }) =>
             birthdate: yup.string().required("Campo obligatorio")
         }),
         onSubmit: async (values, { setSubmitting }) => {
-            confimAlert(async () => {
+            confirmAlert(async () => {
                 try {
                     const payload = {
                         ...values,
@@ -74,7 +74,7 @@ const UpdateUserForm = ({ isUpdate, setIsUpdate, getAllUsers, selectedUser }) =>
         }
     })
 
-     useEffect(() => {
+    useEffect(() => {
         if (selectedUser) {
             formik.setValues({
                 username: selectedUser.username || '',
@@ -83,7 +83,7 @@ const UpdateUserForm = ({ isUpdate, setIsUpdate, getAllUsers, selectedUser }) =>
                 surname: selectedUser.person.surname || '',
                 lastname: selectedUser.person.lastname || '',
                 curp: selectedUser.person.curp || '',
-                birthdate: selectedUser.person.birthdate || '',
+                birthdate: selectedUser.person.birthDate || '',
                 avatar: selectedUser.person.avatar || null,
             });
         }
@@ -227,7 +227,7 @@ const UpdateUserForm = ({ isUpdate, setIsUpdate, getAllUsers, selectedUser }) =>
                                     helperText={
                                         formik.touched.birthdate &&
                                         formik.errors.birthdate && (
-                                            <span className='text-red-600'>{formik.errors.curp}</span>
+                                            <span className='text-red-600'>{formik.errors.birthdate}</span>
                                         )
                                     } />
                             </div>
